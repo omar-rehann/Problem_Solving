@@ -26,7 +26,6 @@ I'm currently tackling **8 kyu** challenges (the easiest level) on Codewars, aim
 - **Next Goal**: Reach 150 points to advance to 7 kyu.
 
 ## Learning Resources
-- **Codewars**: [Add your Codewars profile link here if desired].
 - **W3Resource**: [JavaScript Exercises](https://www.w3resource.com/javascript-exercises/).
 - **YouTube Channel**: [100 Challenges for JS].
 
