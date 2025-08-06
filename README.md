@@ -1,7 +1,7 @@
 # JavaScript Coding Challenges
 
 ## Overview
-Hello! My Name Omar Rehab  I'm a Front-End web developer, and this repository contains my solutions to coding challenges from **Codewars** and **W3Resource** using **JavaScript**. The goal is to enhance my problem-solving skills, deepen my understanding of JavaScript, and develop my algorithmic thinking with a focus on Front-End development concepts.
+Hello! My Name Omar Rehan  I'm a Front-End web developer, and this repository contains my solutions to coding challenges from **Codewars** and **W3Resource** using **JavaScript**. The goal is to enhance my problem-solving skills, deepen my understanding of JavaScript, and develop my algorithmic thinking with a focus on Front-End development concepts.
 
 I'm currently tackling **8 kyu** challenges (the easiest level) on Codewars, aiming to reach **150 points** to advance to **7 kyu**. I also follow a YouTube channel that explains Codewars solutions, which helps me gain a deeper understanding of problems and efficient ways to solve them.
 
