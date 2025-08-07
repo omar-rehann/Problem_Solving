@@ -28,6 +28,7 @@ I'm currently tackling **8 kyu** challenges (the easiest level) on Codewars, aim
 ## Learning Resources
 - **W3Resource**: [JavaScript Exercises](https://www.w3resource.com/javascript-exercises/).
 - **YouTube Channel**: [100 Challenges for JS].
+- **YouTube Link**: [https://www.youtube.com/watch?v=ZJ81jSdoFKI&list=PL3iticg1TvA-jMsFwDgdb6Cy_L__qL56H].
 
 ## Tools & Technologies
 - **Programming Language**: JavaScript (ES6+).
