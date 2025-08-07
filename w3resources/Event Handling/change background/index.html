@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .container div.shape {
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .container button {
+            background-color: green;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .container button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="shape"></div>
+        <button class="Change">Change Color</button>
+    </div>
+
+    <script>
+        let shape = document.querySelector(".shape");
+        let btn = document.querySelector(".Change");
+        let colors = ["red", "gold", "orange", "black", "pink", "gray", "green", "blue", "purple"];
+
+        btn.addEventListener('click', function() {
+            let randomIndex = Math.floor(Math.random() * colors.length);
+            let randomColor = colors[randomIndex];
+            shape.style.backgroundColor = randomColor;
+            btn.style.backgroundColor = randomColor;
+
+        });
+    </script>
+</body>
+
+</html>

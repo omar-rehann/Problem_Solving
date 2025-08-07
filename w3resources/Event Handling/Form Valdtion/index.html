@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container form input,
+        .container form textarea,
+        .container form button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .container form input:focus,
+        .container form textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        
+        .container form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .container form button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .container form button:hover {
+            background-color: #1a252f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="myForm">
+            <input type="text" placeholder="Enter Name" class="name" required>
+            <input type="email" placeholder="Enter Email" class="email" required>
+            <input type="password" placeholder="Enter Password" class="pass" required>
+            <textarea class="msg" placeholder="Please Enter Message" rows="5" required></textarea>
+            <button type="submit" class="enter">Send Information</button>
+        </form>
+    </div>
+
+    <!-- SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.querySelector('.name').value.trim();
+            const email = document.querySelector('.email').value.trim();
+            const password = document.querySelector('.pass').value.trim();
+            const message = document.querySelector('.msg').value.trim();
+
+            if (name === '' || email === '' || password === '' || message === '') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please fill in all fields!',
+                    confirmButtonColor: '#2c3e50'
+                });
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'Your information has been submitted successfully',
+                    confirmButtonColor: '#2c3e50',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(() => {
+                    // You can add form submission logic here
+                    // e.g., this.submit(); or AJAX request
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
