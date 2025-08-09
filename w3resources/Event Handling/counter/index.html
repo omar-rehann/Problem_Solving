@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Boxes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+            margin: 0;
+        }
+        
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        section:first-child {
+            background-color: #aaa;
+        }
+        
+        section:nth-child(2) {
+            background-color: #bbb;
+        }
+        
+        section:nth-child(3) {
+            background-color: #ccc;
+        }
+        
+        section:last-of-type {
+            background-color: #eee;
+        }
+        
+        .nums {
+            width: 400px;
+            display: flex;
+        }
+        
+        .nums .num {
+            flex: 1;
+            text-align: center;
+            font-size: 40px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="one">Section One</section>
+    <section class="two">Section Two</section>
+    <section class="three">
+        <div class="nums">
+            <div class="num" data-goal="100">0</div>
+            <div class="num" data-goal="500">0</div>
+            <div class="num" data-goal="300">0</div>
+        </div>
+    </section>
+    <section class="four">Section Four</section>
+    <script>
+        let nums = document.querySelectorAll(".nums .num");
+        let section = document.querySelector(".three");
+        let started = false; // Function Started ? No
+
+        window.onscroll = function() {
+            if (window.scrollY >= section.offsetTop) {
+                if (!started) {
+                    nums.forEach((num) => startCount(num));
+                }
+                started = true;
+            }
+        };
+
+        function startCount(el) {
+            let goal = el.dataset.goal;
+            let count = setInterval(() => {
+                el.textContent++;
+                if (el.textContent == goal) {
+                    clearInterval(count);
+                }
+            }, 2000 / goal);
+        }
+    </script>
+
+</body>
+
+</html>
