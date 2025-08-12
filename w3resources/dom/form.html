@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        body {
+            background-color: #ddd;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+        
+        .container input,
+        .container textarea {
+            width: 100%;
+            background-color: #eee;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        
+        .container button {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .content {
+            background-color: #eee;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="infoForm">
+            <input type="text" placeholder="Enter First Name" class="firstName" />
+            <input type="text" placeholder="Enter Last Name" class="lastName" />
+            <input type="email" placeholder="Enter Email" class="email" />
+            <input type="password" placeholder="Enter Password" class="password" />
+            <textarea placeholder="Enter Message" class="message" rows="5" cols="40"></textarea>
+            <button type="submit">Send Information</button>
+        </form>
+
+        <div class="content"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const form = document.getElementById("infoForm");
+        const content = document.querySelector(".content");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const firstName = document.querySelector(".firstName").value.trim();
+            const lastName = document.querySelector(".lastName").value.trim();
+            const email = document.querySelector(".email").value.trim();
+            const password = document.querySelector(".password").value.trim();
+            const message = document.querySelector(".message").value.trim();
+
+            if (!firstName || !lastName || !email || !password || !message) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Missing Info',
+                    text: 'Please fill in all fields.'
+                });
+                return;
+            }
+
+            content.innerHTML = `
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Last Name:</strong> ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Password:</strong> ${password}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `;
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Submitted!',
+                text: 'Your information has been saved.'
+            });
+
+            form.reset();
+        });
+    </script>
+
+</body>
+
+</html>

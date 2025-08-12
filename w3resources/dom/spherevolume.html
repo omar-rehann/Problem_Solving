@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sphere Volume Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .calculator {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            font-size: 18px;
+            display: none;
+        }
+        
+        .formula {
+            font-style: italic;
+            color: #666;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <h1>Sphere Volume Calculator</h1>
+
+        <div class="form-group">
+            <label for="radius">Radius (units):</label>
+            <input type="number" id="radius" placeholder="Enter radius" min="0" step="any">
+        </div>
+
+        <button onclick="calculateVolume()">Calculate Volume</button>
+
+        <div id="result"></div>
+
+        <div class="formula">
+            Formula: V = (4/3) × π × r³
+        </div>
+    </div>
+
+    <script>
+        function calculateVolume() {
+            const radius = parseFloat(document.getElementById('radius').value);
+
+            if (isNaN(radius)) {
+                alert('Please enter a valid number for radius');
+                return;
+            }
+
+            if (radius <= 0) {
+                alert('Radius must be greater than zero');
+                return;
+            }
+
+            const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+            const resultElement = document.getElementById('result');
+            resultElement.style.display = 'block';
+            resultElement.innerHTML = `
+        <strong>Sphere Volume:</strong> ${volume.toFixed(2)} cubic units
+        <br><small>(using π = ${Math.PI.toFixed(5)})</small>
+      `;
+        }
+    </script>
+
+</body>
+
+</html>
