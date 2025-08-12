@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Effect</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #00cc00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .typing {
+            font-size: 24px;
+            border-right: 2px solid #00cc00;
+            white-space: nowrap;
+            overflow: hidden;
+            width: fit-content;
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0%,
+            100% {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #00cc00;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="typing" id="typeText"></div>
+
+    <script>
+        const text = "Welcome to my portfolio. Let's build something amazing!";
+        const speed = 80; // milliseconds per character
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typeText").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+
+</body>
+
+</html>
