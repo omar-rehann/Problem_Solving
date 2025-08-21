@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test In JosnPlaceholder</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+        
+        table {
+            background-color: white;
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background-color: #f8f9fa;
+        }
+        
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        tbody tr:hover {
+            background-color: #f1f3f5;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody class="content"></tbody>
+    </table>
+
+    <script>
+        const test = new XMLHttpRequest();
+        test.open("GET", "https://jsonplaceholder.typicode.com/posts/");
+        test.send();
+        let parent = document.querySelector(".content");
+        test.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let data = JSON.parse(this.responseText);
+                for (let i = 0; i <= 50; i++) {
+                    let result = `
+                     <tr>
+                                <td>${data[i].id}</td>
+                                <td>${data[i].body}</td>
+                                
+                            </tr>
+
+
+                    `
+                    parent.innerHTML += result;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

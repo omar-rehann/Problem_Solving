@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test In Json PlaceHolder</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+        
+        table {
+            background-color: white;
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background-color: #f8f9fa;
+        }
+        
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        tbody tr:hover {
+            background-color: #f1f3f5;
+        }
+        
+        .completed {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .not-completed {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="content"></tbody>
+    </table>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4) {
+                if (this.status === 200) {
+                    const data = JSON.parse(this.responseText);
+                    const tbody = document.querySelector(".content");
+                    let rows = '';
+
+                    for (let i = 0; i < Math.min(data.length, 100); i++) {
+                        rows += `
+                            <tr>
+                                <td>${data[i].id}</td>
+                                <td>${data[i].title}</td>
+                                <td class="${data[i].completed ? 'completed' : 'not-completed'}">
+                                    ${data[i].completed ? 'Completed' : 'Not Completed'}
+                                </td>
+                            </tr>
+                        `;
+                    }
+                    tbody.innerHTML = rows;
+                } else {
+                    console.error('Error fetching data:', this.status);
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>
