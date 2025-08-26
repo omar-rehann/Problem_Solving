@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Placeholder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #eaeaea;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> SHow JSON Placeholder</h1>
+    <table>
+        <thead>
+            <tr>
+                <th> (ID)</th>
+                <th> (Title)</th>
+                <th> (Body)</th>
+            </tr>
+        </thead>
+        <tbody class="content">
+        </tbody>
+    </table>
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/posts/')
+            .then(response => response.json())
+            .then(data => {
+                const parent = document.querySelector(".content");
+                for (let i = 0; i < 20; i++) {
+                    const row = `
+                        <tr>
+                            <td>${data[i].id}</td>
+                            <td>${data[i].title}</td>
+                            <td>${data[i].body}</td>
+                        </tr>
+                    `;
+                    parent.innerHTML += row;
+                }
+            });
+    </script>
+</body>
+
+</html>
