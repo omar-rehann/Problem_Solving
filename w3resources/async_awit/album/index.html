@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Album</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        thead {
+            background-color: #007BFF;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> Show All Album</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Id</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody class="content">
+        </tbody>
+    </table>
+    <script>
+        let parent = document.querySelector(".content");
+
+        async function getAllalbum() {
+            let store = await fetch('https://jsonplaceholder.typicode.com/albums/');
+            let change = await store.json();
+            return change;
+        }
+        getAllalbum().then((data) => {
+            for (let i = 0; i < data.length; i++) {
+                let result = `
+                     <tr>
+                                <td>${data[i].userId}</td>
+                                <td>${data[i].id}</td>
+                                <td>${data[i].title}</td>
+
+                            </tr>
+
+        `
+                parent.innerHTML += result;
+
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
