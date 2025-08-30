@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عداد</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .number {
+            font-size: 6rem;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dec {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+        
+        .dec:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: translateY(-2px);
+        }
+        
+        .res {
+            background: linear-gradient(45deg, #fbc531, #e1b12c);
+            color: #2f3640;
+        }
+        
+        .res:hover {
+            background: linear-gradient(45deg, #e1b12c, #fbc531);
+            transform: translateY(-2px);
+        }
+        
+        .inc {
+            background: linear-gradient(45deg, #05c46b, #0be881);
+            color: white;
+        }
+        
+        .inc:hover {
+            background: linear-gradient(45deg, #0be881, #05c46b);
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>العداد</h1>
+        <span class="number">0</span>
+        <div class="buttons">
+            <button class="dec">Decrease</button>
+            <button class="res">Reset </button>
+            <button class="inc">Increase</button>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+        let numberElement = document.querySelector(".number");
+        let decButton = document.querySelector(".dec");
+        let resButton = document.querySelector(".res");
+        let incButton = document.querySelector(".inc");
+
+        incButton.onclick = function() {
+            count++;
+            numberElement.textContent = count;
+            updateColor();
+        }
+
+        resButton.onclick = function() {
+            count = 0;
+            numberElement.textContent = count;
+            updateColor();
+        }
+
+        decButton.onclick = function() {
+            count--;
+            numberElement.textContent = count;
+            updateColor();
+        }
+
+        function updateColor() {
+            if (count > 0) {
+                numberElement.style.color = "#0be881"; // أخضر
+            } else if (count < 0) {
+                numberElement.style.color = "#ff6b6b"; // أحمر
+            } else {
+                numberElement.style.color = "#fff"; // أبيض
+            }
+        }
+
+        // التهيئة الأولية للألوان
+        updateColor();
+    </script>
+</body>
+
+</html>
