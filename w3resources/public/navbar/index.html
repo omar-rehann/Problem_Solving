@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        
+        .postion {
+            position: relative;
+            top: 52px;
+        }
+        
+        .continer {
+            background-color: #2D3748;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .continer header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .continer header .logo {
+            color: white;
+        }
+        
+        .continer header .links {
+            height: 20px;
+        }
+        
+        .continer header .links ul {
+            list-style-type: none;
+            display: flex;
+            height: 20px;
+        }
+        
+        .continer header .links ul a {
+            text-decoration: none;
+            margin: 0px 10px;
+            color: white;
+        }
+        
+        .continer header .icon {
+            display: none;
+        }
+        
+        @media (max-width:767px) {
+            .continer header .icon {
+                display: block;
+                position: relative;
+            }
+            .continer header .icon i {
+                cursor: pointer;
+                color: white;
+                font-weight: bold;
+            }
+            .continer header .links ul {
+                position: absolute;
+                width: 100%;
+                background-color: #4B5563;
+                top: 51px;
+                left: -3000px;
+                height: 100vh;
+                flex-direction: column;
+                transition: 2s;
+            }
+            .continer header .links ul.active {
+                left: 0px;
+            }
+            .continer header .links ul a {
+                color: white;
+                display: block;
+                width: 90%;
+                padding: 10px;
+                border-radius: 2px;
+                ;
+                margin: 10px auto;
+                padding: 10px;
+                text-align: center;
+            }
+        }
+        
+        section .background {
+            background-image: url(imgs/05.jpg);
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="continer">
+        <header>
+            <div class="logo">
+                <h5>Speaicl Design</h5>
+
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Skills</a>
+                    </li>
+                    <li>
+                        <a href="">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="">Timeline</a>
+                    </li>
+                    <li>
+                        <a href="">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="">Testimonials</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="icon">
+                <i class="fa-solid fa-bars toggle"></i>
+            </div>
+        </header>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js " integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI " crossorigin="anonymous "></script>
+    <script>
+        let icon = document.querySelector(".toggle");
+        let links = document.querySelector(".links ul");
+        // event navbar
+        icon.onclick = function() {
+            links.classList.toggle("active");
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.add("fa-x");
+                icon.classList.remove("fa-bars");
+
+            } else {
+                icon.classList.remove("fa-x");
+                icon.classList.add("fa-bars");
+            }
+
+        };
+    </script>
+
+</body>
+
+</html>
+
+</html>

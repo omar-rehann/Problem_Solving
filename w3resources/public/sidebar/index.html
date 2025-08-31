@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Sidebar Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        /* Sidebar Styles */
+        
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(135deg, #2c3e50, #4a69bd);
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: #4a69bd;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        
+        .search-bar {
+            padding: 0 20px;
+            margin-bottom: 25px;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 14px;
+        }
+        
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .nav-links {
+            flex: 1;
+        }
+        
+        .nav-links ul {
+            list-style: none;
+        }
+        
+        .nav-links li {
+            padding: 12px 20px;
+            margin: 5px 0;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid white;
+        }
+        
+        .nav-links li.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-left: 4px solid #fff;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+        
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        /* Main Content Styles */
+        
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .main-content h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+            }
+            .nav-links {
+                display: flex;
+                overflow-x: auto;
+            }
+            .nav-links ul {
+                display: flex;
+            }
+            .nav-links li {
+                border-left: none;
+                border-bottom: 4px solid transparent;
+                margin: 0 5px;
+                padding: 10px 15px;
+            }
+            .nav-links li:hover,
+            .nav-links li.active {
+                border-left: none;
+                border-bottom: 4px solid white;
+            }
+            .logo,
+            .sidebar-footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1><span><i class="fas fa-rocket"></i></span> SideMenu</h1>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <nav class="nav-links">
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Messages <span style="background: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px;">5</span></a></li>
+                <li><a href="#"><i class="fas fa-calendar"></i> Calendar</a></li>
+                <li><a href="#"><i class="fas fa-file"></i> Documents</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2023 SideMenu. All rights reserved.</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2>Dashboard</h2>
+
+        <div class="card">
+            <h3>Welcome to Your Dashboard</h3>
+            <p>This is the main content area that changes based on the navigation selection from the sidebar. You can place various content here like charts, tables, or other information.</p>
+        </div>
+
+        <div class="card">
+            <h3>Recent Activity</h3>
+            <p>You have 3 pending tasks to complete. Your storage is 75% full. Consider upgrading if you need more space.</p>
+        </div>
+
+        <div class="card">
+            <h3>Quick Stats</h3>
+            <p>Website visits: 1,243 | New users: 157 | Sales: $12,387</p>
+        </div>
+    </main>
+
+    <script>
+        // Simple JavaScript to handle active state
+        document.querySelectorAll('.nav-links li').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-links li').forEach(li => {
+                    li.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
