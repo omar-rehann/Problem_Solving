@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    background-color: #ddd;
+}
+
+.continer {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.continer button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.modal {
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: -300px;
+    transition: 2s;
+}
+
+.modal.active {
+    top: 20px;
+}
+
+.modal .icon {
+    position: absolute;
+    right: -7px;
+    top: -11px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+}
+
+.modal .icon i {
+    cursor: pointer;
+}
