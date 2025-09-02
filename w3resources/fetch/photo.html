@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo In JosnPlaceholder</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+        
+        .continer {
+            text-align: center;
+        }
+        
+        table {
+            background-color: white;
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background-color: #f8f9fa;
+        }
+        
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        tbody tr:hover {
+            background-color: #f1f3f5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="continer">
+        <h2>Photo In Json PlaceHolder</h2>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Album Id</th>
+                <th>Title IMG</th>
+                <th>URL IMG</th>
+
+            </tr>
+        </thead>
+        <tbody class="content">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        let parent = document.querySelector(".content");
+        fetch('https://jsonplaceholder.typicode.com/photos/').then((result) => {
+            let data = result.json();
+            return data;
+        }).then(alldata => {
+            for (let i = 0; i < 100; i++) {
+                let parent = document.querySelector(".content");
+                let result = `
+                <td>${i}</td>
+                <td>${alldata[i].albumId}</td>
+                <td>${alldata[i].title}</td>
+                <td>${alldata[i].url}</td>
+
+                
+                
+                `
+                parent.innerHTML += result;
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>
