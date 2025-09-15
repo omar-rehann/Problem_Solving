@@ -15,4 +15,4 @@ function solution(str, ending) {
     let test = str.split(" ");
     return str.endsWith(ending)
 }
-console.log(solution("omar rehan", "an")) g
+console.log(solution("omar rehan", "an"))
