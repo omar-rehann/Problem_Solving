@@ -1,0 +1,32 @@
+/*
+Oh no!
+The new zookeeper has lost track of how many animals are in the zoo because the last person to do the count thought it would be funny to do it in binary.
+Write a function that can help the zookeper convert the binary count.
+Input will be an object where key:value-pairs will represent an animal and a binary number.
+Output should be an integer that equals the sum of all the animals in the zoo
+*/
+function countTheAnimals(animals) {
+    let z = [];
+    for (let e in animals) {
+        z.push(animals[e])
+    }
+    let test = z.map(function(e) {
+        let check = Array.from(e).reverse();
+        let final = check.map(function(e, i) {
+            return e * 2 ** i;
+        }).reduce(function(one, two) {
+            return one + two;
+        })
+        return final
+    })
+    let result = test.reduce(function(one, two) {
+        return one + two;
+    })
+    return result;
+
+}
+console.log(countTheAnimals({
+    "lion": "101", // ده مش رقم 101 عادي → ده binary
+    "zebra": "11",
+    "elephant": "10"
+}));
