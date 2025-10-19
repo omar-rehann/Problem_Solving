@@ -3,7 +3,7 @@
 ## Overview
 Hello! I'm **Omar Rehan**, a Front-End web developer. This repository contains my solutions to coding challenges from **Codewars**, **W3Resource**, and **LeetCode** using **JavaScript**. My goal is to enhance my problem-solving skills, deepen my understanding of JavaScript, and develop my algorithmic thinking, with a focus on Front-End development concepts.
 
-I'm currently tackling **7 kyu** challenges on Codewars, having progressed from **8 kyu**, and working towards mastering more advanced problems. I've also started solving challenges on **LeetCode** to prepare for technical interviews and improve my algorithmic skills. I follow a YouTube channel that explains Codewars solutions, which helps me understand problems deeply and learn efficient solution strategies.
+I'm currently tackling **6 kyu** challenges on Codewars, having progressed **7 kyu** from and **8 kyu**, and working towards mastering more advanced problems. I've also started solving challenges on **LeetCode** to prepare for technical interviews and improve my algorithmic skills. I follow a YouTube channel that explains Codewars solutions, which helps me understand problems deeply and learn efficient solution strategies.
 
 ## Goals
 - Solve daily JavaScript challenges from Codewars, W3Resource, and LeetCode.
@@ -13,9 +13,9 @@ I'm currently tackling **7 kyu** challenges on Codewars, having progressed from 
 - Document solutions clearly to serve as a reference for myself and others.
 
 ## Repository Structure
-- **📁 Codewars**: Solutions to Codewars challenges, organized by level (e.g., `8_kyu`, `7_kyu`).
-- **📁 W3Resource**: Solutions to W3Resource exercises, categorized by topic (e.g., `Functions`, `Loops`).
-- **📁 LeetCode**: Solutions to LeetCode problems, organized by difficulty (e.g., `Easy`, `Medium`).
+- **📁 Codewars**: Solutions to Codewars challenges, organized by level (e.g., `8_kyu`, `7_kyu`, `6_kyu`).
+- **📁 W3Resource**: Solutions to W3Resource exercises, categorized by topic (e.g., `Functions`, `Loops`, `Events`, `Dom`, `Regular Expersion`, `opp`....).
+- **📁 LeetCode**: Solutions to LeetCode problems, organized by difficulty (e.g., `Easy`).
 - **📝 Each file includes**:
   - Link to the challenge.
   - Problem description.
@@ -25,9 +25,10 @@ I'm currently tackling **7 kyu** challenges on Codewars, having progressed from 
 
 ## Current Progress
 ### Codewars
-- **Current Level**: 7 kyu
-- **Current Points**: 130 Points
-- **Next Goal**: Reach 150 points to solidify my position in 7 kyu and aim for 6 kyu
+- **Current Level**: 6 kyu
+- **Current Points**: 500 Points
+- **Progress**: Reached 6 kyu and completed several katas at this level
+- **Next Goal**:Continue solving 6 kyu challenges to prepare for 5 kyu — moving to 5 kyu usually requires tackling more difficult katas (5–4 kyu) and earning around 700–900 points in total.
 
 ### LeetCode
 - **Current Status**: Beginner, focusing on Easy problems to build algorithmic skills
