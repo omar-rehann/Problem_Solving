@@ -20,24 +20,20 @@ Ad
 The Future of
 */
 function sameCase(a, b) {
-    // نتأكد أولًا إن الاثنين حروف
     if (!a.match(/[a-zA-Z]/) || !b.match(/[a-zA-Z]/)) {
         return -1;
     }
 
-    // لو الاثنين حروف صغيرة أو الاثنين حروف كبيرة
     if ((a === a.toLowerCase() && b === b.toLowerCase()) ||
         (a === a.toUpperCase() && b === b.toUpperCase())) {
         return 1;
     }
-
-    // الحروف letters لكن مش نفس الحالة
     return 0;
 }
 
-// اختبارات
-console.log(sameCase('a', 'g')); // 1
-console.log(sameCase('A', 'C')); // 1
-console.log(sameCase('b', 'G')); // 0
-console.log(sameCase('B', 'g')); // 0
-console.log(sameCase('0', '?')); // -1
+console.log(sameCase('a', 'g'));
+console.log(sameCase('A', 'C'));
+
+console.log(sameCase('b', 'G'));
+console.log(sameCase('B', 'g'));
+console.log(sameCase('0', '?'));
