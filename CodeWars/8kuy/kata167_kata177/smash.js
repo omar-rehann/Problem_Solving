@@ -10,4 +10,4 @@ function smash(words) {
         return [].join(" ")
     }
 };
-console.log(smash([]))
+console.log(smash([])) su
