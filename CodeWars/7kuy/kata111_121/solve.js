@@ -29,4 +29,4 @@ function solve(s) {
         return s.toUpperCase()
     }
 }
-console.log(solve("omar"))
+console.log(solve("omar")) i
