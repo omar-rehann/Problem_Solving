@@ -14,4 +14,4 @@ function convert(n) {
     let test = Array.from(String(n)).reverse().join(' ');
     return test;
 }
-console.log(convert(12345))
+console.log(convert(12345)) twot
