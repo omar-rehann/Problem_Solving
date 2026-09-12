@@ -8,3 +8,4 @@ function coding(arr1, arr2) {
     let test = arr1.conact(arr2);
     return test;
 }
+ف
