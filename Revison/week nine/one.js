@@ -10,6 +10,10 @@ Examples:
 
 
 */
+
+
+
+// 7 kata 
 function reverseList(list) {
     return [...list].reverse();
 }
