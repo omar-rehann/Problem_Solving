@@ -17,7 +17,6 @@ var longestCommonPrefix = function(strs) {
     let count = 0;
     let test = [];
 
-    // استخدام حلقة لتمثيل الحروف بدلاً من المقارنة الخاطئة للكلمات
     for (let i = 0; i < strs[0].length; i++) {
         let currentChar = strs[0][i];
         let isMatch = true;
