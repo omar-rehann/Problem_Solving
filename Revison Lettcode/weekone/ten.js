@@ -25,7 +25,6 @@ var longestCommonPrefix = function(strs) {
                 break;
             }
         }
-
         if (isMatch) {
             test.push(currentChar);
             ++count;
@@ -33,7 +32,6 @@ var longestCommonPrefix = function(strs) {
             break;
         }
     }
-
     return test.join("");
 };
 
