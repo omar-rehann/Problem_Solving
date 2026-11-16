@@ -16,11 +16,9 @@ Explanation: There is no common prefix among the input strings.
 var longestCommonPrefix = function(strs) {
     let count = 0;
     let test = [];
-
     for (let i = 0; i < strs[0].length; i++) {
         let currentChar = strs[0][i];
         let isMatch = true;
-
         for (let j = 1; j < strs.length; j++) {
             if (strs[j][i] !== currentChar) {
                 isMatch = false;
